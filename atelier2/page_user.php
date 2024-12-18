@@ -4,10 +4,10 @@ session_start();
 
 // Vérifier si l'utilisateur est bien en possession d'un cookie valide
 // Dans le cas contraire il sera redirigé vers la page d'accueil de connexion
-if (isset($_COOKIE['authToken']) && str_starts_with($_COOKIE['authToken'], 'admin_')) {
+if (isset($_COOKIE['authToken']) && str_starts_with($_COOKIE['authToken'], 'user_')) {
     header('Location: page_admin.php');
     exit();
-} elseif (isset($_COOKIE['authToken']) && str_starts_with($_COOKIE['authToken'], 'user_')) {
+} elseif (isset($_COOKIE['authToken']) && str_starts_with($_COOKIE['authToken'], 'admin_')) {
     header('Location: page_user.php');
     exit();
 }
@@ -21,7 +21,7 @@ if (isset($_COOKIE['authToken']) && str_starts_with($_COOKIE['authToken'], 'admi
     <title>Accueil</title>
 </head>
 <body>
-    <h1>Bienvenue sur la page Administrateur protégée par un Cookie</h1>
+    <h1>Bienvenue sur la page user protégée par un Cookie</h1>
     <p>Vous êtes connecté en tant qu'user.</p>
     <a href="logout.php">Se déconnecter</a>
 </body>
