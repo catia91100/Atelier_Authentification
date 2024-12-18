@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         setcookie('authToken', 'admin', time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 minute (60 secondes) 
         header('Location: page_admin.php'); // L'utilisateur est dirigé vers la page home.php
         exit();
-    } elseif ($username === 'user' && $password === 'utilisateur') {
+    } if ($username === 'user' && $password === 'utilisateur') {
         $token = bin2hex(random_bytes(16));
         setcookie('authToken', 'admin', time() + 60, '/', '', false, true); // Le Cookie est initialisé et valable pendant 1 minute (60 secondes) 
         header('Location: page_user.php'); // L'utilisateur est dirigé vers la page home.php
