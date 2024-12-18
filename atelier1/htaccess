@@ -1,4 +1,4 @@
 AuthName "Accès protégé"
 AuthType Basic
-AuthUserFile /home/etudiantecatia.alwaysdata
+AuthUserFile /home/etudiantecatia/www./htpasswd
 Require valid-user
