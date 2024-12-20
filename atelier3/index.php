@@ -37,9 +37,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit();
     }
     
-    else {
-        $error = "Nom d'utilisateur ou mot de passe incorrect.";
-    }
 }
 ?>
 
