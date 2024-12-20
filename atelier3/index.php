@@ -3,13 +3,14 @@
 session_start();
 
 //initialisation de ma variable
-if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";
+if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";){
 $_SESSION['counter'] = 0;
 // incrémenter le compteur
 $_SESSION['counter']++;
 // montrer le résultat à l'écran
 echo "Vous avez vu " . $_SESSION['counter'] . " fois cette page";
-?>
+exit();
+}
 
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_SESSION['username']==='admin') {
