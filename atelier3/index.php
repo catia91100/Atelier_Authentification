@@ -2,6 +2,15 @@
 // Démarre la session
 session_start();
 
+//initialisation de ma variable
+if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";
+$_SESSION['counter'] = 0;
+// incrémenter le compteur
+$_SESSION['counter']++;
+// montrer le résultat à l'écran
+echo "Vous avez vu " . $_SESSION['counter'] . " fois cette page";
+?>
+
 // Vérifier si l'utilisateur est déjà connecté
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_SESSION['username']==='admin') {
     header('Location: page_admin.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
@@ -12,15 +21,6 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_SESSION['
     exit();
 }
 
-//initialisation de ma variable
-if(!isset ($_SESSION['counter'])&& $_SESSION['counter']=== true){
-$_SESSION['counter'] = 0;
-// incrémenter le compteur
-$_SESSION['counter']++;
-// montrer le résultat à l'écran
-echo "Vous avez vu " . $_SESSION['counter'] . " fois cette page";
-}
-?>
    
 
 // Gérer le formulaire de connexion
