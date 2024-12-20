@@ -3,11 +3,11 @@
 session_start();
 
 // Vérifier si l'utilisateur est déjà connecté
-if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_USERNAME['admin']) {
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_USERNAME['admin']=== true) {
     header('Location: page_admin.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
     exit();
 }
-    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_USERNAME['user']) {
+    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_USERNAME['user']=== true) {
     header('Location: page_user.php'); // Si l'utilisateur s'est déjà connecté alors il sera automatiquement redirigé vers la page protected.php
     exit();
 }
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br><br>
         <button type="submit">Se connecter</button>
     </form>
-     <h3>La page <a href="page_user.php">page_user.php</a> de cet atelier 3 est inaccéssible tant que vous ne vous serez pas connecté avec le login 'user' et mot de passe 'utilisateur'</h3>
+     <h4>La page <a href="page_user.php">page_user.php</a> de cet atelier 3 est inaccéssible tant que vous ne vous serez pas connecté avec le login 'user' et mot de passe 'utilisateur'</h3>
     <form method="POST" action="">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
