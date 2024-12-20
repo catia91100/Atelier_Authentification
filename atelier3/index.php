@@ -13,7 +13,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_SESSION['
 }
 
 //initialisation de ma variable
-if(!isset ($_SESSION['counter'])&& $_SESSION['counter']=== true;{
+if(!isset ($_SESSION['counter'])&& $_SESSION['counter']=== true){
 $_SESSION['counter'] = 0;
 // incrémenter le compteur
 $_SESSION['counter']++;
