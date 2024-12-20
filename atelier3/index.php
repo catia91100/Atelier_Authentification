@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <br><br>
         <button type="submit">Se connecter</button>
     </form>
-     <h3>La page <a href="page_user.php">page_user.php</a> de cet atelier 3 est inaccéssible tant que vous ne vous serez pas connecté avec le login 'user' et mot de passe 'secret'</h3>
+     <h3>La page <a href="page_user.php">page_user.php</a> de cet atelier 3 est inaccéssible tant que vous ne vous serez pas connecté avec le login 'user' et mot de passe 'utilisateur'</h3>
     <form method="POST" action="">
         <label for="username">Nom d'utilisateur :</label>
         <input type="text" id="username" name="username" required>
