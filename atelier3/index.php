@@ -19,8 +19,9 @@ $_SESSION['counter'] = 0;
 $_SESSION['counter']++;
 // montrer le résultat à l'écran
 echo "Vous avez vu " . $_SESSION['counter'] . " fois cette page";
-}
+
 ?>
+    }
 
 // Gérer le formulaire de connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
