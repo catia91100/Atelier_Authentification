@@ -13,7 +13,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin']=== true && $_SESSION['
 }
 
 //initialisation de ma variable
-if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = true;{
+if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";
 $_SESSION['counter'] = 0;
 // incrémenter le compteur
 $_SESSION['counter']++;
@@ -21,7 +21,7 @@ $_SESSION['counter']++;
 echo "Vous avez vu " . $_SESSION['counter'] . " fois cette page";
 
 ?>
-    }
+    
 
 // Gérer le formulaire de connexion
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
