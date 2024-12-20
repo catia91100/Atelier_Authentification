@@ -3,7 +3,7 @@
 session_start();
 
 //initialisation de ma variable
-if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";){
+if(!isset ($_SESSION['counter']) )$_SESSION['counter']  = "";{
 $_SESSION['counter'] = 0;
 // incrémenter le compteur
 $_SESSION['counter']++;
