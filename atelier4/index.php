@@ -5,7 +5,7 @@ $valid_password = 'secret';
 
 
 // Vérifier si l'utilisateur a envoyé des identifiants
-if (!isset($_SERVER['PHP_AUTH_USER']==$valid_username) || !isset($_SERVER['PHP_AUTH_PW']== $valid_password)) {
+if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
     // Envoyer un header HTTP pour demander les informations
     header('WWW-Authenticate: Basic realm="Zone Protégée"');
     header('HTTP/1.0 401 Unauthorized');
@@ -14,6 +14,15 @@ if (!isset($_SERVER['PHP_AUTH_USER']==$valid_username) || !isset($_SERVER['PHP_A
 }
 
 // Vérifier les identifiants envoyés
+
+if ($_SERVER['PHP_AUTH_USER'] == $valid_username || $_SERVER['PHP_AUTH_PW'] == $valid_password) {
+    // Si les identifiants sont corrects
+    header('WWW-Authenticate: Basic realm="Zone Protégée"');
+    header('HTTP/1.0 401 Unauthorized');
+    echo 'Nom d\'utilisateur ou mot de passe correct.';
+    exit;
+}
+
 if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !== $valid_password) {
     // Si les identifiants sont incorrects
     header('WWW-Authenticate: Basic realm="Zone Protégée"');
