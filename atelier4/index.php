@@ -15,7 +15,7 @@ if (!isset($_SERVER['PHP_AUTH_USER']) || !isset($_SERVER['PHP_AUTH_PW'])) {
 
 // Vérifier les identifiants envoyés
 
-if ($_SERVER['PHP_AUTH_USER'] == $valid_username = 'admin' || $_SERVER['PHP_AUTH_PW'] == $valid_password = 'secret') {
+if ($_SERVER['PHP_AUTH_USER'] == $valid_username || $_SERVER['PHP_AUTH_PW'] == $valid_password ) {
     // Si les identifiants sont corrects
     header('WWW-Authenticate: Basic realm="Zone Protégée"');
     header('HTTP/1.0 401 Unauthorized');
@@ -45,7 +45,7 @@ if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !==
     <p>Ceci est une page protégée par une authentification simple via le header HTTP</p>
     <p>C'est le serveur qui vous demande un nom d'utilisateur et un mot de passe via le header WWW-Authenticate</p>
     <p>Aucun système de session ou cookie n'est utilisé pour cet atelier</p>
-    <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']); ?></p>
+    <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']== $valid_username); ?></p>
 
     // Si les identifiants sont incorrects
     ?>
@@ -61,6 +61,6 @@ if ($_SERVER['PHP_AUTH_USER'] !== $valid_username || $_SERVER['PHP_AUTH_PW'] !==
     <p>Cette page n'est pas protégée par une authentification simple via le header HTTP</p>
     <p>C'est le serveur qui vous demande un nom d'utilisateur et un mot de passe via le header WWW-Authenticate</p>
     <p>Aucun système de session ou cookie n'est utilisé pour cet atelier</p>
-    <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']); ?></p>
+    <p>Vous êtes connecté en tant que : <?php echo htmlspecialchars($_SERVER['PHP_AUTH_USER']!== $valid_username); ?></p>
 </body>
 </html>
